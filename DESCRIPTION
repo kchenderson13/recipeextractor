@@ -1,15 +1,12 @@
-Package: finalproject
-Title: What the Package Does (One Line, Title Case)
+Package: RecipeExtractor
+Title: This Package Will Simplify The Way Users Can Search Recipes
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+    "Kylie Henderson"
+Description: This package will filter recipe searches by using key ingrdient
+terms and limiting the page threshold to ensure the user is getting results 
+specific to their search.
+License: `use_gpl3_license()` 
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
