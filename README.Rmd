@@ -1,0 +1,65 @@
+---
+title: "recipeextractor"
+author: "Kylie Henderson"
+date: "`r Sys.Date()`"
+output: github_document
+---
+A package extending the capability of [reddit] (https://github.com/ivan-rivera/RedditExtractoR)
+by enhancing the users experience in searching for recipes using only
+specified ingredients.
+
+## Install
+
+Install from GitHub with the following code:
+
+```{r install, eval = FALSE}
+if (!requireNamespace("devtools", quietly = TRUE)) {
+  install.packages("devtools")
+}
+devtools::install_github("kyliehenderson13/recipeextractor")
+```
+
+## Instructions
+
+The user will enter the following
+
+```{setup instructions, eval = FALSE}
+recipe("ExampleIngredient", PageCount)
+```
+
+Now you can begin to customize your search
+
+Create an object and begin your search placing in your preferred ingredients and page threshold
+
+```{setup instructions, eval = FALSE}
+ExampleObjectName = ("broccoli, cheese, recipe", 3)
+```
+After doing this, your object should exemplify the results you are searching.
+
+You can continue to search for different ingredients, and list as many as you would like. Be aware that the more specific you get with ingredients, the more narrow your search results will be
+For best results, it is suggested to list no more than 5 ingredients or the results will become too specific.
+
+## Usage
+
+```{r usage, eval = FALSE}
+## Enter your preferred search terms
+ExampleObjectName = ("broccoli, cheese, recipe", 3)
+```
+
+This results in the creation of an object with your preferred search terms
+
+## If desired, leave the page threshold blank for a broader search
+ExampleObjectName = ("broccoli, cheese, recipe")
+
+The user can place as many or as little ingredient variables as desired, but it is recommended to use no more than 5.
+
+The RedditExtractor API currently works at a request rate of 1.58 seconds, meaning your results should be evident very quickly. Excessive use in a short period of time could potentially slow down the result rate, so in this case, be sure that your previous results have been fully loaded before trying again.
+
+
+
+
+
+
+
+
+
