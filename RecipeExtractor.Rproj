@@ -1,22 +1,28 @@
-Version: 1.0
+#'Reddit Recipe Search
+#'
+#'Filters recipe searches in a way that is more accesible to the user
+#'
+#'@author Kylie Henderson
+#'
+#'@param x up to a maximum of 7 ingredient inputs
+#'@param y language (english by defaults)
+#'
+#'@return A specific compilation of recipes using only the key ingredients entered
+#'by the user
+#'
+#'@examples
+#'ExampleObjectName = ("broccoli, cheese, recipe", 3)
+#'
+#'@export
 
-RestoreWorkspace: No
-SaveWorkspace: No
-AlwaysSaveHistory: Default
+# This is the function
 
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
+recipe = function(ingredient, pages){
+  df = RedditExtractorR::reddit_urls(search_terms = paste0(ingredient, ",",
+  "recipe"), page_threshold = pages)
+  assign("recipe_object", df, envir = GlobalEnv)
+}
 
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
-
-AutoAppendNewline: Yes
-StripTrailingWhitespace: Yes
-LineEndingConversion: Posix
-
-BuildType: Package
-PackageUseDevtools: Yes
-PackageInstallArgs: --no-multiarch --with-keep.source
-PackageRoxygenize: rd,collate,namespace
+# The user then only needs to enter their search terms in toder to get results
+# Example
+ExampleObjectName = ("broccoli, cheese, recipe" ,3)
