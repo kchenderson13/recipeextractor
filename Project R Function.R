@@ -1,0 +1,30 @@
+#'Reddit Recipe Search
+#'
+#'Filters recipe searches in a way that is more accesible to the user
+#'
+#'@author Kylie Henderson
+#'
+#'@param x up to a maximum of 7 ingredient inputs
+#'@param y language (english by defaults)
+#'
+#'@return A specific compilation of recipes using only the key ingredients entered
+#'by the user
+#'
+#'@examples
+#'ExampleObjectName = ("broccoli, cheese, recipe", 3)
+#'
+#'@export
+
+recipe = function(ingredient, pages){
+  df = RedditExtractorR::reddit_urls(search_terms = paste0(ingredient, ",",
+  "recipe"), page_threshold = pages)
+  assign("recipe_object", df, envir = GlobalEnv)
+}
+
+# This is the function
+
+# The user then only needs to enter their search terms in toder to get results
+# Example
+ExampleObjectName = ("broccoli, cheese, recipe" ,3)
+
+
